@@ -1,5 +1,9 @@
 _labs
 .vscode
 .vsc
-__pycache__
 venv
+*Zone.Identifier
+**.pyc
+__pycache__
+temp
+!temp/.gitkeep
