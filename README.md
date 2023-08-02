@@ -8,5 +8,7 @@
 
 ## Information
 
-Master branch is supposed to have a domain registered since its using port 443 and certbot.
+1. Master branch is supposed to have a domain registered since its using port 443 and certbot.
 For local development or using port 80, use dev branch.
+
+2. With this setup you can either use the JWT or flask_session for authorization and login.

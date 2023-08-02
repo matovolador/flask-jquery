@@ -46,4 +46,4 @@ def metadata(token_id):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5050,ssl_context=('/etc/letsencrypt/live/<your_domain>/fullchain.pem', '/etc/letsencrypt/live/<your_domain>/privkey.pem'))
+    app.run(host="0.0.0.0",port=5050,debug=True)
