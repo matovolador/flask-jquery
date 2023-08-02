@@ -2,13 +2,23 @@ services:
   app:
     build: app
     ports:
-      - 80:5050
+      - 443:5050
     networks:
       - db-network
     depends_on:
       - 'db'
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     command: ["./wait-for-it.sh","db:5432","--","./start_app.sh"]
 
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email <your-email> --agree-tos --no-eff-email -d <your-domain>
+  
   db:
     image: postgres:13
     restart: always
