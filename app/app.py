@@ -21,16 +21,16 @@ app.secret_key = 'asd123asd12341asd123'
 #CORS(app, supports_credentials=True)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+CORS(app, supports_credentials=True)
+# SSLify(app)
+# optional if you want to use flask_session
+# Session(app)
 
 app.config['UPLOAD_FOLDER'] = "downloads"
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s', datefmt='%Y-%m-%d:%H:%M:%S')
 
-app = Flask(__name__)
-app.secret_key = 'oijsadfkllsdfj2jr2jjr2lr2j24jgl42g2ngn24gn24n'
-CORS(app, supports_credentials=True)
-# SSLify(app)
+
 
 
 def get_db():
@@ -40,9 +40,6 @@ def get_db():
 def index():
     return render_template("index.html")
 
-@app.route("/metadata/<token_id>",methods=["GET"])
-def metadata(token_id):
-    return render_template("metadata.html",token_id=token_id)
 
 
 if __name__ == "__main__":
