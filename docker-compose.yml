@@ -19,11 +19,7 @@ services:
       - POSTGRES_PASSWORD=secret
       - POSTGRES_DB=main
       - PGPORT=5432
-    volumes:
-      - db-data
 
 networks:
   db-network:
     driver: bridge
-volumes:
-  db-data:
