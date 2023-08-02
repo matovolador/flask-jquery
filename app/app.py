@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s,%(msecs)d %(levelnam
 app = Flask(__name__)
 app.secret_key = 'oijsadfkllsdfj2jr2jjr2lr2j24jgl42g2ngn24gn24n'
 CORS(app, supports_credentials=True)
-# SSLify(app)
+SSLify(app)
 
 
 def get_db():
