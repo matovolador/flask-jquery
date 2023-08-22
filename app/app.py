@@ -34,7 +34,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s,%(msecs)d %(levelnam
 
 
 def get_db():
-    next(database.get_db())
+    return next(database.get_db())
 
 @app.route("/",methods=["GET"])
 def index():
